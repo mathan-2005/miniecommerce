@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">📦</span>
+                <h1>TechStore</h1>
+            </div>
+            <button id="cartBtn" class="cart-btn">
+                <span class="cart-icon">🛒</span>
+                Cart
+                <span id="cartCount" class="cart-count hidden">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Products View -->
+        <div id="productsView" class="view active">
+            <h2 class="page-title">Featured Products</h2>
+            <div id="productGrid" class="product-grid"></div>
+        </div>
+
+        <!-- Cart View -->
+        <div id="cartView" class="view">
+            <h2 class="page-title">Shopping Cart</h2>
+            <div id="cartContent"></div>
+        </div>
+
+        <!-- Checkout View -->
+        <div id="checkoutView" class="view">
+            <h2 class="page-title">Checkout</h2>
+            <div class="checkout-grid">
+                <div class="checkout-form-container">
+                    <div class="form-section">
+                        <h3>Shipping Information</h3>
+                        <div class="form-grid">
+                            <input type="text" id="name" placeholder="Full Name" required>
+                            <input type="email" id="email" placeholder="Email" required>
+                            <input type="text" id="address" placeholder="Street Address" class="full-width" required>
+                            <input type="text" id="city" placeholder="City" required>
+                            <input type="text" id="zipCode" placeholder="ZIP Code" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Payment Information</h3>
+                        <div class="form-grid">
+                            <input type="text" id="cardNumber" placeholder="Card Number" maxlength="19" class="full-width" required>
+                            <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+                            <input type="text" id="cvv" placeholder="CVV" maxlength="4" required>
+                        </div>
+                    </div>
+
+                    <button id="completePurchaseBtn" class="btn btn-success btn-large">
+                        💳 Complete Purchase
+                    </button>
+                </div>
+
+                <div id="checkoutSummary" class="order-summary"></div>
+            </div>
+        </div>
+
+        <!-- Confirmation View -->
+        <div id="confirmationView" class="view">
+            <div class="confirmation-container">
+                <div class="confirmation-icon">✓</div>
+                <h2>Order Confirmed!</h2>
+                <p class="confirmation-message">Thank you for your purchase</p>
+                
+                <div id="orderDetailsBox" class="order-details-box"></div>
+
+                <div class="confirmation-actions">
+                    <button id="downloadInvoiceBtn" class="btn btn-primary">
+                        📥 Download Invoice
+                    </button>
+                    <button id="continueShoppingBtn" class="btn btn-secondary">
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
